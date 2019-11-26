@@ -8,11 +8,18 @@ include "db.php";
 
 // salasanan hash password_hash() -funktiolla
 if (filter_has_var(INPUT_POST, 'submit')){
-     
+
+    // email tsekkaus
+
+    // salasanan tsekkaus
+
     $email = $_POST['email'];
     $pwd = $_POST['pwd']; 
 
     $hashed_pwd = password_hash($pwd, PASSWORD_DEFAULT); 
+
+
+    // Prepared statement
 
     $sql = "INSERT INTO users (email, pwd) VALUES ('$email','$hashed_pwd')";
 
