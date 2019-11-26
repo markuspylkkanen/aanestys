@@ -8,17 +8,17 @@
 <body>
 <p> Rekisteröidy! <p>
 <br>
-<form class="form-inline" action="insertti.php">
+<form class="form-inline" action="insertti.php" method="post">
   <label for="email">Sähköposti:</label>
-  <input type="email" class="form-control" id="email">
+  <input type="email" class="form-control" id="email" name="email">
   
   <label for="pwd">Salasana:</label>
-  <input type="password" class="form-control" id="pwd">
-  <div class="form-check">
-    
-    </div>
-  <button type="submit" class="btn btn-primary">Luo tili</button>
-</form>
+  <input type="password" class="form-control" id="pwd" name="pwd">
+  
+  <div class="form-check"></div>
+
+  <button type="submit" name="submit" class="btn btn-primary">Luo tili</button>
+
 </form>
 </body>
 </html>
