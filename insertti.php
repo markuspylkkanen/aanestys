@@ -21,9 +21,10 @@ if (filter_has_var(INPUT_POST, 'submit')){
 
     // Prepared statement
 
-    $sql = "INSERT INTO users (email, pwd) VALUES ('$email','$hashed_pwd')";
+$stmt = $conn->prepare("INSERT INTO users (email, pwd) VALUES (?, ?)");
+$stmt->bind_param("ss", $email, $hashed_pwd);
 
-    if ($conn->query($sql) === TRUE) 
+    if ($stmt->excecute() === TRUE) 
     {
         header('Location: location.php');
     }
@@ -32,6 +33,7 @@ if (filter_has_var(INPUT_POST, 'submit')){
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
+    $stmt->close();
     $conn->close();
 
 }
