@@ -24,7 +24,7 @@ if (filter_has_var(INPUT_POST, 'submit')){
 $stmt = $conn->prepare("INSERT INTO users (email, pwd) VALUES (?, ?)");
 $stmt->bind_param("ss", $email, $hashed_pwd);
 
-    if ($stmt->excecute() === TRUE) 
+    if ($stmt->execute() === TRUE) 
     {
         header('Location: location.php');
     }
