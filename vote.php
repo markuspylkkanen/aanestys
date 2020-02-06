@@ -11,7 +11,7 @@
 <br>
 
 <textarea placeholder="Äänestyksen aihe:" 
-rows="3" cols="50" name="" form="">
+rows="2" cols="45" name="" form="">
 </textarea>
 
 <br>
