@@ -14,7 +14,7 @@
         <input type="text" name="kysymys">
     </div>
 
-    <button class="btn" onclick="addChoice()">Lisää vaihtoehtoja</button>
+    <button class="btn-primary" onclick="addChoice()">Lisää vaihtoehtoja</button>
     <br>
 </br>
     <div class="form-group">
