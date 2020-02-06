@@ -12,21 +12,23 @@
     <div class="form-group">
         <label for="kysymys">Äänestyksen aihe:</label>
         <input type="text" name="kysymys">
-    </div>
-
-    <button class="btn-primary" onclick="addChoice()">Lisää vaihtoehtoja</button>
-    <br>
-</br>
-    <div class="form-group">
+        
+<button class="btn-primary" onclick="addChoice()">Lisää vaihtoehtoja</button>
+</div>
+<br>
+    
+<div class="form-group">
         <input type="text" name="vaihtoehto" placeholder="Vaihtoehto 1">
-    </div>
+        
+        <a href="" class="button">Tallenna</a>
+      </div>
 
     <div id="choices">
 
     </div>
 
   
-    <a href="" class="button">Tallenna</a>
+    
 
 <script>
 function addChoice(){
