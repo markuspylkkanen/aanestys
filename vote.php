@@ -26,9 +26,7 @@
     </div>
 
   
- <div class="form-group">
-        <input type="submit" value="Tallenna">
-    </div>
+    <a href="" class="button">Tallenna</a>
 
 <script>
 function addChoice(){
@@ -58,6 +56,8 @@ let newDiv = document.createElement('div');
 
 }
 </script>
+
+
 
 
 
