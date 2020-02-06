@@ -1,6 +1,10 @@
 <?php
 include "db.php";
-"INSERT INTO optio (id, optio_value, upvote, downvote)"
+
+$stmt = $conn->prepare("INSERT INTO optio (id, optio_value, upvote, downvote, vote_id) VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("sssss");
+
+if ($stmt->execute() === TRUE) 
 
 ?>
 
