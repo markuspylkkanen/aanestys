@@ -1,6 +1,6 @@
 <?php
 include "db.php";
-"INSERT INTO "
+"INSERT INTO optio (id, optio_value, upvote, downvote)"
 
 ?>
 
