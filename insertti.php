@@ -29,7 +29,7 @@ if (filter_has_var(INPUT_POST, 'submit')){
 
     if ($stmt->execute() === TRUE) 
     {
-        header('Location: location.php');
+        header('Location: login.php');
     }
     else 
     {
