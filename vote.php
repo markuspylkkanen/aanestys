@@ -9,46 +9,57 @@
 
 <h4> Voit tällä sivulla luoda äänestyksen! </h4>
 <br>
+    <div class="form-group">
+        <label for="kysymys">Äänestyksen aihe:</label>
+        <input type="text" name="kysymys">
+    </div>
 
-<textarea placeholder="Äänestyksen aihe:" 
-rows="2" cols="45" name="" form="">
-</textarea>
-
-<br>
-<br>
-
-
-<input type="text" name="kkona" placeholder="Vaihtoehto 1:">
-<input type="text" name="kkona" placeholder="Vaihtoehto 2:">
-<br>
+    <button class="btn" onclick="addChoice()">Lisää vaihtoehtoja</button>
+    <br>
 </br>
+    <div class="form-group">
+        <input type="text" name="vaihtoehto" placeholder="Vaihtoehto 1">
+    </div>
 
-<button class="btn" onclick="addChoice()"> Lisää vaihtoehtoja </button>
+    <div id="choices">
 
-<a href=".php" class="button5">Tallenna</a>
+    </div>
+
+  
+ <div class="form-group">
+        <input type="submit" value="Tallenna">
+    </div>
 
 <script>
 function addChoice(){
+let i =  document.getElementById('choices').childElementCount + 2;
 
+let newDiv = document.createElement('div');
+        let divClass = document.createAttribute('class');
+        divClass.value = 'form-group';
+        newDiv.setAttributeNode(divClass);
 
+        
+        let newInput = document.createElement('input');
+        let type = document.createAttribute('type');
+        let name = document.createAttribute('name');
+        let placeholder = document.createAttribute('placeholder');
+        type.value = 'text';
+        name.value = 'vaihtoehto' + i;
+        placeholder.value = 'Vaihtoehto ' + i
+        newInput.setAttributeNode(type);
+        newInput.setAttributeNode(name);
+        newInput.setAttributeNode(placeholder);
 
+        newDiv.appendChild(newInput);
+
+        document.getElementById('choices').appendChild(newDiv);
 
 
 }
 </script>
 
-<style>
-.button {
-  background-color: #0080ff; 
-  border: none;
-  color: white;
-  padding: 11px 11px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-} 
-</style>
+
 
 
 
