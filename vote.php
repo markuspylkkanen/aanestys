@@ -22,8 +22,6 @@ rows="3" cols="50" name="" form="">
 <input type="text" name="kkona" placeholder="Vaihtoehto 2:">
 <br>
 </br>
-<input type="text" name="kkona" placeholder="Vaihtoehto 3:">
-<input type="text" name="kkona" placeholder="Vaihtoehto 4:">
 
 <button class="btn" onclick="addChoice()"> Lisää vaihtoehtoja </button>
 
