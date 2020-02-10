@@ -5,25 +5,32 @@ include "db.php";
 if (filter_has_var(INPUT_POST, 'kysymys')){
 
 $aihe = $_POST['kysymys'];   
- // Lisää äänestys vote-tauluun
-
-// Ota id talteen
-
-// Lisää vaihtoehdot opito-tauluun (silmukassa)
-
+        
+        // Lisää äänestys vote-tauluun
         $stmt = $conn->prepare("INSERT INTO vote (aihe) VALUES (?)");
         $stmt->bind_param("s", $aihe);
 
         if ($stmt->execute() === TRUE) {
                 echo "toimii";
-                $last_id = $conn->insert_id;
+                $last_id = $conn->insert_id; // Ota id talteen
                 echo $last_id;
-        } else {
-                echo "error";
-        }
-} else {
+                echo "<br>";
+                // Lisää vaihtoehdot opito-tauluun (silmukassa)
+                foreach($_POST as $key => $value) {
+                        
+                 echo $key . " => " . $value . "<br>";
+                
+                        
+                        
+                }
 
-        echo "et tullut lomakkeelta";
+
+                } else {
+                echo "error";
+                }
+                } else {
+
+                        echo "et tullut lomakkeelta";
 
 }
 
