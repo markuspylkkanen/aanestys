@@ -13,7 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $conn->prepare("INSERT INTO vote (aihe) VALUES (?)");
         $stmt->bind_param("s");
 
-        // if ($stmt->execute() === TRUE) 
+         if ($stmt->execute() === TRUE) {
+}
 }
 ?>
 <!DOCTYPE html>
