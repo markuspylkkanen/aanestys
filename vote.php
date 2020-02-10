@@ -1,11 +1,20 @@
 <?php
-include "db.php";
 
-$stmt = $conn->prepare("INSERT INTO optio (id, optio_value, upvote, downvote, vote_id) VALUES (?, ?, ?, ?, ?)");
-$stmt->bind_param("sssss");
+if (isset)
 
-if ($stmt->execute() === TRUE) 
+        include "db.php";
 
+        // Lisää äänestys vote-tauluun
+
+        // Ota id talteen
+
+        // Lisää vaihtoehdot opito-tauluun (silmukassa)
+
+        $stmt = $conn->prepare("INSERT INTO vote (aihe) VALUES (?)");
+        $stmt->bind_param("s");
+
+        if ($stmt->execute() === TRUE) 
+}
 ?>
 
 <title> Luo äänestys </title> 
