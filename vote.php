@@ -1,14 +1,15 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+include "db.php";
 
-        include "db.php";
+if (filter_has_var(INPUT_POST, 'submit')){
 
-        // Lisää äänestys vote-tauluun
+        
+ // Lisää äänestys vote-tauluun
 
-        // Ota id talteen
+// Ota id talteen
 
-        // Lisää vaihtoehdot opito-tauluun (silmukassa)
+// Lisää vaihtoehdot opito-tauluun (silmukassa)
 
         $stmt = $conn->prepare("INSERT INTO vote (aihe) VALUES (?)");
         $stmt->bind_param("s");
