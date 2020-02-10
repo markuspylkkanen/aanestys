@@ -16,6 +16,8 @@ $aihe = $_POST['kysymys'];
 
         if ($stmt->execute() === TRUE) {
                 echo "toimii";
+                $last_id = $conn->insert_id;
+                echo $last_id;
         } else {
                 echo "error";
         }
