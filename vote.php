@@ -2,9 +2,9 @@
 
 include "db.php";
 
-if (filter_has_var(INPUT_POST, 'submit')){
+if (filter_has_var(INPUT_POST, 'kysymys')){
 
-        
+$aihe = $_POST['kysymys'];   
  // Lisää äänestys vote-tauluun
 
 // Ota id talteen
@@ -12,11 +12,19 @@ if (filter_has_var(INPUT_POST, 'submit')){
 // Lisää vaihtoehdot opito-tauluun (silmukassa)
 
         $stmt = $conn->prepare("INSERT INTO vote (aihe) VALUES (?)");
-        $stmt->bind_param("s");
+        $stmt->bind_param("s", $aihe);
 
-         if ($stmt->execute() === TRUE) {
+        if ($stmt->execute() === TRUE) {
+                echo "toimii";
+        } else {
+                echo "error";
+        }
+} else {
+
+        echo "et tullut lomakkeelta";
+
 }
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
