@@ -5,8 +5,6 @@ include "db.php";
 if (filter_has_var(INPUT_POST, 'kysymys')){
 
 $aihe = $_POST['kysymys'];  
-$j = "vaihtoehto1";
-$jj = "ehto"; 
         
         // Lisää äänestys vote-tauluun
         $stmt = $conn->prepare("INSERT INTO vote (aihe) VALUES (?)");
@@ -17,19 +15,14 @@ $jj = "ehto";
                 $last_id = $conn->insert_id; // Ota id talteen
                 echo $last_id;
                 echo "<br>";
+                
                 // Lisää vaihtoehdot opito-tauluun (silmukassa)
                 foreach($_POST as $key => $value) {
-                  
-                      if  (strpos($j,$jj)){
-                         echo "wadadwadsdwadwadadaw";      
+                      if  (strpos($key,"ehto")){    
                                 $stmt = $conn->prepare("INSERT INTO optio (optio_value, upvote, downvote, vote_id) VALUES (?, 0, 0, ?)");
                                 $stmt->bind_param("si", $value, $last_id);
                                 $stmt->execute();
-                
-                         } 
-                        
-                
-                        
+                        }        
                 }
 
 
