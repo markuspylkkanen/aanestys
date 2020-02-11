@@ -17,10 +17,15 @@ $aihe = $_POST['kysymys'];
                 echo "<br>";
                 // Lisää vaihtoehdot opito-tauluun (silmukassa)
                 foreach($_POST as $key => $value) {
+                   if(){
                         
+                   
+                
+                } 
                  echo $key . " => " . $value . "<br>";
                 
-                        
+                
+            
                         
                 }
 
