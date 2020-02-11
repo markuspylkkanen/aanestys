@@ -17,26 +17,24 @@ $aihe = $_POST['kysymys'];
                 echo "<br>";
                 // Lisää vaihtoehdot opito-tauluun (silmukassa)
                 foreach($_POST as $key => $value) {
-                   if(){
-                        
-                   
+                  // if(){
+                                $stmt = $conn->prepare("INSERT INTO optio (optio_value, upvote, downvote, vote_id) VALUES (?, 0, 0, ?)");
+                                $stmt->bind_param("si", $value, $last_id);
+                                $stmt->execute();
                 
-                } 
-                 echo $key . " => " . $value . "<br>";
+                        // } 
+                        echo $key . " => " . $value . "<br>";
                 
-                
-            
                         
                 }
 
 
-                } else {
+        } else {
                 echo "error";
-                }
-                } else {
+        }
+} else {
 
-                        echo "et tullut lomakkeelta";
-
+        echo "et tullut lomakkeelta";
 }
 
 ?>
@@ -64,7 +62,7 @@ $aihe = $_POST['kysymys'];
         
     
         <div class="form-group">
-                <input type="text" name="vaihtoehto" placeholder="Vaihtoehto 1">
+                <input type="text" name="vaihtoehto1" placeholder="Vaihtoehto 1">
         
                 <a href="#" onclick="addChoice()">Lisää vaihtoehtoja</a>
                 
