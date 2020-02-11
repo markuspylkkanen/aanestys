@@ -23,7 +23,7 @@ $aihe = $_POST['kysymys'];
                                 $stmt->execute();
                 
                         // } 
-                        echo $key . " => " . $value . "<br>";
+                        
                 
                         
                 }
