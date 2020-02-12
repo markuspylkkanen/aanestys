@@ -25,6 +25,7 @@ $aihe = $_POST['kysymys'];
                         }        
                 }
 
+                header('Location: show.php');
 
         } else {
                 echo "error";
@@ -71,7 +72,6 @@ $aihe = $_POST['kysymys'];
         
         <button class="btn btn-primary" class="button">Tallenna</button>
         
-
 </form>
   
     
