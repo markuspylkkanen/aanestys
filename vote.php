@@ -25,7 +25,7 @@ $aihe = $_POST['kysymys'];
                         }        
                 }
 
-                header('Location: show.php');
+                header('Location: show.php ');
 
         } else {
                 echo "error";
