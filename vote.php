@@ -54,9 +54,12 @@ $aihe = $_POST['kysymys'];
 
         <div class="form-group">
                 <label for="kysymys">Äänestyksen aihe:</label>
-                <input type="text" name="kysymys">
+                <input class="my_class" type="text" name="kysymys">
         </div>
-        
+        <style>
+        input[name="kysymys"] { width: 450px; } 
+
+        </style>
         
     
         <div class="form-group">
