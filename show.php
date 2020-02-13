@@ -1,12 +1,13 @@
 <?php
 
-if (isset($_GET['id'])) {
-    echo "juup";
+if (!isset($_GET['id'])) {
+    die('dead');
 }
+$last_id = intval($_GET['id']);
 
 
 include "db.php";
-$sql = "SELECT * FROM vote";
+$sql = "SELECT * FROM vote WHERE id = $last_id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
