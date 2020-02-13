@@ -24,7 +24,7 @@ $aihe = $_POST['kysymys'];
                                 $stmt->execute();
                         }        
                 }
-                $last_id = 
+                
                 header('Location: show.php?id='.$last_id);
 
         } else {
