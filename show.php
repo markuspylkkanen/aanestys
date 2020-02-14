@@ -29,7 +29,7 @@ $last_id = intval($_GET['id']);
 
 
 include "db.php";
-$sql = "SELECT * FROM optio WHERE id = $last_id";
+$sql = "SELECT * FROM optio WHERE vote_id = $last_id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
