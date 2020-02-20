@@ -1,4 +1,4 @@
-<h2>Poista äänestyksiä</h2>
+<h2>Poista äänestyksiä tai vaihtoehtoja</h2>
 <br>
 
 <?php
