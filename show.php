@@ -13,15 +13,21 @@ include "db.php";
 $sql = "SELECT * FROM vote WHERE id = $id";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
+ if ($result->num_rows > 0) {
     
     while($row = $result->fetch_assoc()) {
-        echo "<br> id: ". $row["id"]. " - kysymys: ". $row["aihe"];
+        echo "<br> id: ". $row["id"]. " - kysymys: ". $row["aihe"];         
+       
+        
     }
-} else {
-    echo "ei ole kysymyksiä";
-}
+ } else {
+     echo "ei ole kysymyksiä";
+ }
+?>
 
+
+
+<?php
 $conn->close();
 
 
@@ -35,28 +41,32 @@ include "db.php";
 $sql = "SELECT * FROM optio WHERE vote_id = $last_id";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
+?>
+<?php if ($result->num_rows > 0): ?>
     
-    while($row = $result->fetch_assoc()) {
-        echo "<br> id: ". $row["id"]. " - Vaihtoehdot: ". $row["optio_value"];
-     
-        // if ($row['deleted'] == 'y') {
-        //     print "<a href='delete.php?id={$_GET[id]}'>Undeleted</a>";
-        // }
-         
-         
+    <?php while($row = $result->fetch_assoc()): ?>
         
-    }
-} else {
-    echo "ei ole vaihtoehtoja";
-}
+        <p>
+            id:      <?php echo $row["id"]; ?>
+            kysymys: <?php echo $row["optio_value"]; ?>
+        
+        <a href="del.php?id=<?php echo $_GET['id']; ?>" class="btn-success">Poista vaihtoehto</a>
+
+        </p>
+    <?php endwhile; ?>
+
+<?php else: ?>
+    
+    <p>ei ole kysymyksiä</p>
+
+<?php endif; 
 
 $conn->close();
 ?>
 <br>
 <br>
-<a href='del.php?id={$_GET[id]}' class="">Poista äänestys</a>
-<a href='del.php?id={$_GET[id]}' class="">Poista vaihtoehto</a>
+<a href="del.php?id=<?php echo $_GET['id']; ?>" class="btn btn-danger">Poista äänestys</a>
+
 
 
 
