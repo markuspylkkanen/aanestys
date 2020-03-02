@@ -50,7 +50,7 @@ $result = $conn->query($sql);
             id:      <?php echo $row["id"]; ?>
             kysymys: <?php echo $row["optio_value"]; ?>
         
-        <a href="del.php?id=<?php echo $_GET['id']; ?>" class="btn-success">Poista vaihtoehto</a>
+        <a href="del.php?id=<?php echo $_GET['id']; ?>" class="btn btn-info">Poista vaihtoehto</a>
 
         </p>
     <?php endwhile; ?>
