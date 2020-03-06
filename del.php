@@ -11,10 +11,11 @@ $id = intval($_GET['id']);
 
 
 // kohde taulu: vote tai optio?
-$table = $_GET['vote'];
+$target = $_GET['target'];
+
 
 // yhdistetään tietokantaan
 include "db.php";
 
 // Luodaan ja suoritetaan sql-lause annettujen parametrien mukaan
-$sql = "DELETE FROM $table WHERE id = ? ";
+$sql = "DELETE FROM $target WHERE id = ? ";
