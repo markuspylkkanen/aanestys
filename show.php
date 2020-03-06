@@ -48,7 +48,7 @@ $result = $conn->query($sql);
         
         <p>
             id:      <?php echo $row["id"]; ?>
-            kysymys: <?php echo $row["optio_value"]; ?>
+            vaihtoehdot: <?php echo $row["optio_value"]; ?>
         
         <a href="del.php?id=<?php echo $_GET['id']; ?>" class="btn btn-info">Poista vaihtoehto</a>
 
