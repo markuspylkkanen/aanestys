@@ -18,4 +18,22 @@ $target = $_GET['target'];
 include "db.php";
 
 // Luodaan ja suoritetaan sql-lause annettujen parametrien mukaan
-$sql = "DELETE FROM $target WHERE id = ? ";
+$stmt = $conn->prepare("DELETE FROM $target WHERE VALUES (?)");
+$stmt->bind_param("i", $id );
+
+    if ($stmt->execute() === TRUE) 
+    {
+        header('Location: show.php');
+    }
+    else 
+    {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $stmt->close();
+    $conn->close();
+
+
+
+
+// echo $sql;
